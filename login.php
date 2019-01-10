@@ -5,7 +5,7 @@ session_start();
 ?>
 <!doctype html>
 <html>
-	<head> 
+	<head>
 	<title> Login Page  </title>
 	 <meta charset="UTF-8"/>
 	   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,10 +19,10 @@ session_start();
 		html,body{
 		  height: 100%;
 
-	
+
 	}
 		.bg{
-		
+
 		background-image: url("img/pink.jpg");
 
   /* Full height */
@@ -32,8 +32,8 @@ session_start();
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-		
-		
+
+
 		}
 			.form1{
 		width: 900px;
@@ -44,21 +44,21 @@ session_start();
 		padding: 30px;
 		margin-bottom:20px;
 		background-color: #ffffff;
-		
+
 		.logout{
-			
+
 			border: 1px solid brown;
 			padding: 5px;
 		}
-		
+
 		}
-	
-	
+
+
 	</style>
 
 	 </head>
-	 
-	 
+
+
 	 <body class="bg">
 			<nav class="navbar navbar-inverse">
 			  <div class="container-fluid">
@@ -76,43 +76,57 @@ session_start();
 				</ul>
 			  </div>
 			</nav>
-			
+
 				<div class="form1">
-				
+
 					<?php
-					
+					if($_POST['login']){
 					$txtEmail= $_POST['uemail'];
 					 $pwd= $_POST['password'];
-						    $query = " SELECT * FROM `user` WHERE `email` = '".$txtEmail."' ";
-							$con = mysqli_connect('localhost','root','','sweet website');
+						$query = " SELECT * FROM `user` WHERE `email` = '".$txtEmail."'And `password` = '". $pwd."' ";
+						$con = mysqli_connect('localhost','root','','sweet website');
 
 								$result = mysqli_query($con,$query);
-								$rowSelected   = mysqli_num_rows($result);
+								//$rowSelected   = mysqli_num_rows($result);
 
-							if ($rowSelected== 1 ) {
-								$_SESSION['login_user']=$txtEmail;
+							if ( mysqli_num_rows($result)== 1 ) {
+								$row= mysqli_fetch_assoc($result);
+										//echo "Login Successful";
+
+								$_SESSION['email']=$txtEmail;
+								$_SESSION['password']=$pwd;
+								$_SESSION['name']=$row['username'];
+								$_SESSION['age']=$row['age'];
+
+
+
+
+
+
 								header("location: welcome.php");
-									
+
 						}else {
-									$error = "Username or Password is invalid";
+									echo "<script>alert('Invalid Email or Password')</script>";
+									$error = "<h3>Email or Password is invalid</h3>";
+									echo $error;
+									echo "<h4><a href='login.html'> Try Again</a></h4>";
+
 									}
-					
+
 						mysqli_close($con);
 
+					}
 
-
-					
-					
 					?>
-								
-					
-						
-				
-		
-				
-				
+
+
+
+
+
+
+
 				</div>
-			
+
 			</body>
 
-</html>			
+</html>

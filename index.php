@@ -1,15 +1,13 @@
 <?php
-include('login.php'); // Includes Login Script
+session_start();
 
-if(isset($_SESSION['login_user'])){
-header("location: welcome.php");
-}
+
 ?>
 
 
 <!doctype html>
 <html>
-	<head> 
+	<head>
 	<title> Sweet Recipes  </title>
 	 <meta charset="UTF-8"/>
 	   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +17,7 @@ header("location: welcome.php");
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/css/bootstrap-reboot.css" 
+	<link rel="stylesheet" href="/css/bootstrap-reboot.css"
 	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/jquery.min.js"></script>
@@ -30,7 +28,7 @@ header("location: welcome.php");
 		 font-family: Verdana, sans-serif;
 
 
-	
+
 	}
 		.bg{
 		margin-top:-20px;
@@ -44,10 +42,10 @@ header("location: welcome.php");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-		
-		
+
+
 		}
-		
+
 		.bg-down{
 		margin-bottom:0px;
 			background-image: url("img/pink.jpg");
@@ -55,45 +53,47 @@ header("location: welcome.php");
 			background-position: center;
 		  background-repeat: no-repeat;
 		  background-size: cover;
-		
+
 		}
-		
+
 	.images{
 	margin:100px;
 	padding:20px;
-	
-	
+
+
 	}
 	.imge {
 	margin-left: 70px;
 		border-radius: 400px;
 		border: 1px solid #5E3F43;
 
-	
-	
+
+
 	}
 	.imge-head{
-		margin-top: 0px;
-		
-	
-	
+		margin-top: 10px;
+
+		margin-left: 500px;;
+		border-radius: 500px;
+
+
 	}
 	p {
 	margin:10px;
 	color:#5E3F43;
-	
+
 	}
 	.h2{
 		margin:10px;
 
-	
+
 	}
 	.figcapt{
 	text-align:center;
 	margin:10px;
 	color:#5E3F43;
 	}
-	
+
 .topnav {
   overflow: hidden;
   background-color: ;
@@ -158,14 +158,14 @@ header("location: welcome.php");
     padding: 14px;
   }
   .topnav input[type=text] {
-    border: 2px solid #ccc;  
+    border: 2px solid #ccc;
   }
 }
 	</style>
 
 
 	 </head>
-	 
+
 	 <body>
 	 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -173,11 +173,11 @@ header("location: welcome.php");
       <a class="navbar-brand" href="#">Sweets Recipes</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="Recipes.html">Recipes</a></li>
-      <li><a href="about.html">About Us</a></li>
+      <li class="active"><a href="#" style="font-size: 17px;">Home</a></li>
+      <li><a href="Recipes.php" style="font-size: 17px;">Recipes</a></li>
+      <li><a href="about.php" style="font-size: 17px;">About Us</a></li>
 	  <div class="topnav">
-  
+
   <div class="search-container">
     <form action="/action_page.php">
       <input type="text" placeholder="Search.." name="search">
@@ -185,44 +185,45 @@ header("location: welcome.php");
     </form>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			<li><a href="welcome.php" style="font-size: 17px;"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+
+      <li><a href="logout.php" style="font-size: 17px;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="bg">
-		  <img class="imge-head" src="img/logo.png" alt="Chef" width="1350" height="290"/>
+		  <img class="imge-head" src="img/logo.jpg" alt="Chef" width="290" height="290"/>
 
 
 </div>
 
 	<figure class="images">
-	<a href="crossiant.html">  <img class="imge" src="img/cross.jpg" alt="Crossiant" title="Crossiant" width="290" height="290"/></a>
-	 <a href="cupcake.html"> <img class="imge" src="img/cupcake.jpg" alt="CupCake" title="CupCake" width="290" height="290"/></a>
-	  <a href="crepe.html"><img class="imge" src="img/crepe.jpg" alt="Crepe" title="Crepe" width="290" height="290"/></a>
+	<a href="crossiant.php">  <img class="imge" src="img/cross.jpg" alt="Crossiant" title="Crossiant" width="290" height="290"/></a>
+	 <a href="cupcake.php"> <img class="imge" src="img/cupcake.jpg" alt="CupCake" title="CupCake" width="290" height="290"/></a>
+	  <a href="crepe.php"><img class="imge" src="img/crepe.jpg" alt="Crepe" title="Crepe" width="290" height="290"/></a>
 	  <figcaption class="figcapt">
 			<h2>Our Most Enjoyable Recipes</h2>
 	  </figcaption>
 
 
-		
+
 	</figure>
-	
+
 	<div class="bg-down">
 	<p><h2 class="h2"> Contact us:</h2></p>
 	<p> Our Email: <a>SweetGroups@gmail.com</a></p>
 	<p> Our Telephone: 092 98376587</p>
-	
-	
+
+
 	</div>
-		
-	 
-	 
-	 
-	 
+
+
+
+
+
 	 </body>
-	 
+
 
 
 

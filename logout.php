@@ -5,16 +5,16 @@
         <meta charset="UTF-8"/>
       </head>
       <body>
-	  
-	  
+
+
 	  <?php
 	session_start();
 	session_destroy();
-		header('Location: login.html');
+		header('Location: index.html');
 ?>
-	  
-	  
-	  
+
+
+
       </body>
 
 
