@@ -49,7 +49,7 @@ session_start();
 		.bg-down{
 		margin-bottom:0px;
 			background-image: url("img/pink.jpg");
-			height: 25%;
+			height: 15%;
 			background-position: center;
 		  background-repeat: no-repeat;
 		  background-size: cover;
@@ -161,6 +161,16 @@ session_start();
     border: 2px solid #ccc;
   }
 }
+.searche{
+	width: 70px;
+	height:38px;
+	margin-left: -5px;
+	border-radius: 10px;
+
+}
+.search_field{
+	border-radius: 10px;
+}
 	</style>
 
 
@@ -179,9 +189,9 @@ session_start();
 	  <div class="topnav">
 
   <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+    <form action="search.php" method='GET'>
+      <input class="search_field" type="text" placeholder="Search.." name="search">
+      <i ><input class="searche" type="submit" name="submit"></i>
     </form>
     </ul>
     <ul class="nav navbar-nav navbar-right">
