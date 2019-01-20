@@ -92,12 +92,32 @@ session_start();
 		font-size: 16px;
 		border-radius:20px;
 		width:800px;
-		height:340px;
+		height:290px;
 		border: 1px solid brown;
 
 
 
 		}
+    .download{
+      float:right;
+      text-decoration: none;
+      border: 1px solid black;
+      padding: 5px;
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      font-size:18px;
+      margin:10px;
+      width:120px;
+      height:40px;
+      border-radius: 10px;
+    }
+    .download:hover{
+      color:  #4CAF50;
+      background: white;
+
+
+    }
 
 
   </style>
@@ -168,6 +188,7 @@ Place flour, baking powder, salt, sugar, butter or margarine, eggs, vanilla, and
 Stir cocoa into the 3/4 cup reserved batter. Drop by spoonfuls over top of white batter. Using a knife, swirl the cocoa batter into the white batter to incorporate it in a marble effect.
 Bake in preheated oven for 30 to 35 minutes, until an inserted wooden pick comes out clean.
 			</div>
+      <a title="click this button to download the recipe"   class="download" href="recipes_download/The Marble.pdf"> Download</a>
 
 			</div>
 

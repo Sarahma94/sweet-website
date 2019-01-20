@@ -39,7 +39,7 @@ session_start();
 		.recipe{
 		flex: flex;
 		width: 900px;
-		height:880px;
+		height:930px;
 		border-radius:20px;
 		margin-left: auto;
 		margin-right: auto;
@@ -98,6 +98,26 @@ session_start();
 
 
 		}
+    .download{
+      float:right;
+      text-decoration: none;
+      border: 1px solid black;
+      padding: 5px;
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      font-size:18px;
+      margin:10px;
+      width:120px;
+      height:40px;
+      border-radius: 10px;
+    }
+    .download:hover{
+      color:  #4CAF50;
+      background: white;
+
+
+    }
 
 
   </style>
@@ -171,6 +191,8 @@ session_start();
 			Transfer pans to wire racks and cool 10 minutes. Remove cake from pans, peel off parchment paper
 			and place directly on racks to cool completely. Slice each cake horizontally into 2 equal layers.
 			</div>
+      <a title="click this button to download the recipe"   class="download" href="recipes_download/Chocolate Fudge Cake.pdf"> Download</a>
+
 
 			</div>
 

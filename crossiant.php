@@ -39,7 +39,7 @@ session_start();
 		.recipe{
 		flex: flex;
 		width: 900px;
-		height:880px;
+		height:950px;
 		border-radius:20px;
 		margin-left: auto;
 		margin-right: auto;
@@ -98,6 +98,26 @@ session_start();
 
 
 		}
+    .download{
+      float:right;
+      text-decoration: none;
+      border: 1px solid black;
+      padding: 5px;
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      font-size:18px;
+      margin:10px;
+      width:120px;
+      height:40px;
+      border-radius: 10px;
+    }
+    .download:hover{
+      color:  #4CAF50;
+      background: white;
+
+
+    }
 
 
   </style>
@@ -149,7 +169,7 @@ session_start();
 
 			<div class="time">
 
-			Prep:45min   Cook:12min    Extra time: 7hr23min    Ready in:8hr20min
+			Prep:45min |  Cook:12min |   Extra time: 7hr23min  |  Ready in:8hr20min
 			</div>
 			<br/>
 
@@ -158,7 +178,7 @@ session_start();
 			Proof the yeast in the warm water and set aside.
 			Beat egg yolks,stir in warm milk,sugar,salt, yeast mixture,and 2/3cup of the flour.
 				Beat until smooth and set aside.
-				Cut butter into remaining flour until partcles are the size of LARGE PEAS.
+				Cut butter into remaining flour until particles are the size of LARGE PEAS.
 				Pour in yeast mixture.
 				Mix lightly with a spatula just until flour is moistened.
 				Cover and chill at least 2 hours or up to 3 days.
@@ -175,8 +195,10 @@ session_start();
 				Makes 36 small, but you can make as big as you want.
 
 			</div>
+      <a title="click this button to download the recipe"   class="download" href="recipes_download/The croissant recipe.pdf"> Download</a>
 
 			</div>
+
 
 
 

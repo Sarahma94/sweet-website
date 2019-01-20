@@ -39,7 +39,7 @@ session_start();
 		.recipe{
 		flex: flex;
 		width: 900px;
-		height:880px;
+		height:900px;
 		border-radius:20px;
 		margin-left: auto;
 		margin-right: auto;
@@ -95,9 +95,27 @@ session_start();
 		height:300px;
 		border: 1px solid brown;
 
-
-
 		}
+    .download{
+      float:right;
+      text-decoration: none;
+      border: 1px solid black;
+      padding: 5px;
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      font-size:18px;
+      margin:10px;
+      width:120px;
+      height:40px;
+      border-radius: 10px;
+    }
+    .download:hover{
+      color:  #4CAF50;
+      background: white;
+
+
+    }
 
 
   </style>
@@ -160,6 +178,8 @@ Stir milk mixture into flour mixture just until combined. Stir in chopped pear. 
 Bake for 18 to 22 min or until a tester inserted in center of muffins comes out clean. Cool muffins in pan for 5 to 10 min. Transfer to a rack to cool completely.
 
 			</div>
+      <a title="click this button to download the recipe"   class="download" href="recipes_download/Gingerbread Pear Muffins.pdf"> Download</a>
+
 
 			</div>
 

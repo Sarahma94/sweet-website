@@ -93,12 +93,32 @@ session_start();
 		font-size: 16px;
 		border-radius:20px;
 		width:800px;
-		height:340px;
+		height:280px;
 		border: 1px solid brown;
 
 
 
 		}
+    .download{
+      float:right;
+      text-decoration: none;
+      border: 1px solid black;
+      padding: 5px;
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      font-size:18px;
+      margin:10px;
+      width:120px;
+      height:40px;
+      border-radius: 10px;
+    }
+    .download:hover{
+      color:  #4CAF50;
+      background: white;
+
+
+    }
 
 
   </style>
@@ -159,6 +179,8 @@ session_start();
 					In a small skillet over medium heat, melt butter. About 1/4 cup at a time, drop batter evenly onto pan, swirling it to evenly coat.
 					Cook 2 minutes, then flip and cook 1 minute more; repeat with remaining batter. Serve crêpes warm with fresh fruit and powdered sugar.
 			</div>
+      <a title="click this button to download the recipe"   class="download" href="recipes_download/The Crepe Recipe.pdf"> Download</a>
+
 
 			</div>
 

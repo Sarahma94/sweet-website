@@ -41,7 +41,7 @@ session_start();
 		.recipe{
 		flex: flex;
 		width: 900px;
-		height:880px;
+		height:910px;
 		border-radius:20px;
 		margin-left: auto;
 		margin-right: auto;
@@ -94,12 +94,32 @@ session_start();
 		font-size: 16px;
 		border-radius:20px;
 		width:800px;
-		height:340px;
+		height:320px;
 		border: 1px solid brown;
 
 
 
 		}
+    .download{
+      float:right;
+      text-decoration: none;
+      border: 1px solid black;
+      padding: 5px;
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      font-size:18px;
+      margin:10px;
+      width:120px;
+      height:40px;
+      border-radius: 10px;
+    }
+    .download:hover{
+      color:  #4CAF50;
+      background: white;
+
+
+    }
 
 
   </style>
@@ -163,6 +183,8 @@ Remove from heat once desired thickness has been reached. Enjoy hot or place in 
 	<strong>Tips:</strong>
 If you like a bit more of a mint flavour in your desserts, add ¼ tsp peppermint extract instead of 1/8 tsp.
 			</div>
+
+      <a title="click this button to download the recipe"   class="download" href="recipes_download/The chocolate pudding.pdf"> Download</a>
 
 			</div>
 
