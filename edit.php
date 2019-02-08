@@ -91,7 +91,6 @@ height: -5%;   }
   border-radius: 10px;
   padding: 12px;
   display: block;
-  margin: 15px;
 
 }
 .title{
@@ -100,10 +99,6 @@ height: -5%;   }
 .edit{
   display: block;
   float: left;
-}
-
-.uplr{
-  margin: 20px;
 }
 
 		</style>
@@ -132,63 +127,93 @@ height: -5%;   }
 			  </div>
 			</nav>
 
-						<div class="form1">
+      <div class="form1">
 
 
 
-						<?php
-            include "session.php";
-
-echo "<h1 style='text-align:center;'>Welcome</h1><h1 style='text-align:center;'>".	$_SESSION['name']."</h1><br>";
-echo "<hr>";
-echo "<div class='info' style='float:left;'><h2>Personal info:</h2>
-  <table style='text-align:left;padding:12px;margin: 15px; font-size:18px;'>
-  <tr>
-  <td class='title'>Name:</td>
-  <td>".$_SESSION['name']."</td>
-
-  </tr>
-  <tr>
-  <td class='title'>Age:</td>
-  <td>".$_SESSION['age']."</td>
-  </tr>
-  <tr>
-  <td class='title'>Email:</td>
-  <td>".$_SESSION['email']."</td>
-  </tr>
-  </table>
-
-  "
-?>
+      <?php
 
 
-
-              <form class="edit" type="get" action="editprofile.php">
-                <input type="submit"  class="btn btn-info" value="Edit Profile">
-
-              </form>
-
-              <?php echo "</div>"; ?>
-              <div class="uplr">
-              <p>
-                Upload your own Recipe here:</p>
-              <form class="edit" type="get" action="uploadpage.php">
-                <input type="submit" class="btn btn-success" value="Upload Recipe">
-
-              </form>
-            </div>
-
-	  </div>
+session_start();
+include "dbconfig.php";
 
 
+  try{
+    $name = $_POST['uname'];
+    $age=$_POST['uage'];
+    $email = $_POST['uemail'];
+    $password = $_POST['password'];
+    $conpass= $_POST['confirmpass'];
 
-    	 	 		<footer>
+    $query = "UPDATE `user` SET username= '$name' , age ='$age',password= '$password',confirm= '$conpass' WHERE email= '$email' ";
+    $stmt = $DB_con->prepare($query);
+
+    if($stmt->execute()){
+        echo "<div class='alert alert-success'>
+  <strong>Success!</strong> User Updated Successfully
+</div>";
+$query = " SELECT * FROM `user` WHERE `email` = '".$email."'And `password` = '". $password."' ";
+$con = mysqli_connect('localhost','root','','sweet website');
+
+    $result = mysqli_query($con,$query);
+    //$rowSelected   = mysqli_num_rows($result);
+
+  if ( mysqli_num_rows($result)== 1 ) {
+    $row= mysqli_fetch_assoc($result);
+        //echo "Login Successful";
+
+    $_SESSION['email']= $row['email'];
+    $_SESSION['password']=$row['password'];
+    $_SESSION['name']=$row['username'];
+    $_SESSION['age']=$row['age'];
+
+    echo "<a href='welcome.php'>Profile </a>";
 
 
-    	 	 			<p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
+}
+        }
 
-    	 	 </footer>
-      </body>
+      }
+
+      catch (Exception $ex)
+
+         {
+
+           die($ex->getMessage());
+         }
+
+
+
+
+
+
+
+
+
+
+
+ ?>
+
+
+</form>
+
+
+
+
+
+
+
+</div>
+
+
+
+      <footer>
+
+
+        <p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
+
+   </footer>
+ </body>
 
 
 </html>

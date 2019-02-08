@@ -1,3 +1,9 @@
+<?php
+session_start();
+include "dbconfig.php";
+?>
+
+
 <!doctype html>
 <html>
       <head>
@@ -91,7 +97,6 @@ height: -5%;   }
   border-radius: 10px;
   padding: 12px;
   display: block;
-  margin: 15px;
 
 }
 .title{
@@ -100,10 +105,6 @@ height: -5%;   }
 .edit{
   display: block;
   float: left;
-}
-
-.uplr{
-  margin: 20px;
 }
 
 		</style>
@@ -134,61 +135,79 @@ height: -5%;   }
 
 						<div class="form1">
 
+              <form class="form-horizontal" action="edit.php" method="post">
+    					<fieldset><legend>Sign Up Information</legend>
+
+                <div class="form-group">
+                <label class="control-label col-sm-2" for="email">*Email:</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email" name="uemail" onfocus="yellow(this)"  onblur="white(this)"  placeholder="Please Enter Your Email" required>
+                </div>
+                </div>
+    						 <div class="form-group">
+    							<label class="control-label col-sm-2" for="name">*Name:</label>
+    							<div class="col-sm-10">
+    								<input type="text" class="form-control" id="name" name="uname" onfocus="yellow(this)" onblur="white(this)" placeholder="Please Enter Your Name" required>
+    							</div>
+    					  </div>
+    					   <div class="form-group">
+    							<label class="control-label col-sm-2" for="age">Age:</label>
+    							<div class="col-sm-10">
+    								<input type="number" class="form-control" id="age" name="uage" onfocus="yellow(this)"   onblur="white(this)" placeholder="Please Enter Your Age">
+    							</div>
+    					  </div>
+                <div class="form-group">
+               <label class="control-label col-sm-2" for="pwd">*Password:</label>
+               <div class="col-sm-10">
+                 <input type="password" class="form-control" id="pwd" name="password" onfocus="yellow(this)"  onblur="white(this)" placeholder="Please Enter Your Password" required>
+                 <span id="message"></span>
+
+               </div>
+               </div>
+               <div class="form-group">
+                 <label class="control-label col-sm-2" for="pswcon">*Password Confirm:</label>
+                 <div class="col-sm-10">
+         <input type="password" class="form-control" id="pswcon" name="confirmpass" onfocus="yellow(this)"  onblur="white(this)" placeholder="Please Re-enter Your Password" onkeyup='check();'  required>
+             <span id='message'></span>
+                 </div>
+               </div>
 
 
-						<?php
-            include "session.php";
 
-echo "<h1 style='text-align:center;'>Welcome</h1><h1 style='text-align:center;'>".	$_SESSION['name']."</h1><br>";
-echo "<hr>";
-echo "<div class='info' style='float:left;'><h2>Personal info:</h2>
-  <table style='text-align:left;padding:12px;margin: 15px; font-size:18px;'>
-  <tr>
-  <td class='title'>Name:</td>
-  <td>".$_SESSION['name']."</td>
 
-  </tr>
-  <tr>
-  <td class='title'>Age:</td>
-  <td>".$_SESSION['age']."</td>
-  </tr>
-  <tr>
-  <td class='title'>Email:</td>
-  <td>".$_SESSION['email']."</td>
-  </tr>
-  </table>
+    					  <div class="form-group">
+    						<div class="col-sm-offset-2 col-sm-10">
+    						  <button type="submit" name="update" class="btn btn-default">Update</button>
+    						</div>
+    					  </div>
+    					  <div class="form-group">
+    						<div class="col-sm-offset-2 col-sm-10">
+    						  <button type="reset" class="btn btn-default">Reset</button>
+    						</div>
+    					  </div>
 
-  "
-?>
+    					  	  <img class="imge" src="img/kiss.png" alt="cake" width="90" height="90" style="margin-top:50px;"/>
+    						  </fieldset>
+
+    					</form>
 
 
 
-              <form class="edit" type="get" action="editprofile.php">
-                <input type="submit"  class="btn btn-info" value="Edit Profile">
 
-              </form>
 
-              <?php echo "</div>"; ?>
-              <div class="uplr">
-              <p>
-                Upload your own Recipe here:</p>
-              <form class="edit" type="get" action="uploadpage.php">
-                <input type="submit" class="btn btn-success" value="Upload Recipe">
 
-              </form>
+
             </div>
 
-	  </div>
 
 
-
-    	 	 		<footer>
-
-
-    	 	 			<p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
-
-    	 	 </footer>
-      </body>
+                   <footer>
 
 
-</html>
+                     <p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
+
+                </footer>
+              </body>
+
+
+        </html>

@@ -14,7 +14,7 @@
 		<style>
 
 				html,body{
-		  height: 100%;
+          font-family: Verdana, sans-serif;
 
 
 	}
@@ -34,7 +34,7 @@
 		}
 			.form1{
 		width: 900px;
-		height:580px;
+		height:1510px;
 		border-radius:20px;
 		margin-left: auto;
 		margin-right: auto;
@@ -45,7 +45,7 @@
 		}
     footer
     {
-      position: absolute;
+      position: relative;
       bottom: 0px;
       left: 30%;
       height: 5%;
@@ -72,39 +72,19 @@
     }
     li{
       font-size: 17px;
-    }
-
-     td {
-        border-bottom: 1px solid #ddd;
-
-    padding: 15px;
-
-    }
-    h2{
-      color: DeepPink ;
-    }
-    hr{
-height: -5%;   }
-
-.info{
-  border: 1px solid lightgray;
+}
+object
+{
   border-radius: 10px;
-  padding: 12px;
-  display: block;
-  margin: 15px;
+color: black;
+width: 620px;
+height:300px;
+
 
 }
-.title{
-  color: DeepPink;
-}
-.edit{
-  display: block;
-  float: left;
-}
 
-.uplr{
-  margin: 20px;
-}
+
+
 
 		</style>
       </head>
@@ -133,62 +113,59 @@ height: -5%;   }
 			</nav>
 
 						<div class="form1">
+              <body>
+                <form method="post" action="upload.php" enctype="multipart/form-data">
+                <table width="350" border="0" cellpadding="1" cellspacing="1" class="box">
+                <tr>
+                <td width="246">
+                <input name="userfile" type="file"  id="userfile">
+                </td>
+                <td width="80"><input name="upload" class="btn btn-primary" type="submit" class="box" id="upload" value=" Upload "></td>
+                </tr>
+
+                <?php
+
+                $dbname="sweet website";
+                $servername="localhost";
+                $password="";
+                $dbuser="root";
+
+                $conn= mysqli_connect($servername,$dbuser,$password,$dbname);
+                $query = "SELECT * FROM upload ORDER BY id DESC";
+                $result = mysqli_query($conn, $query);
+                while($row = mysqli_fetch_array($result))
+                {
+
+                  $title = $row ['name'];
+                  $url = $row ['content'];
+                  $usern= $row['user_uploaded'];
+                  echo " <p> Name: ".$title." </p>";
+              echo ' <tr>
+              <object data="data:application/pdf;base64,'.base64_encode($row['content'] ).'" type="application/pdf"></object>';
+              echo "<br> Uploaded By User:".$usern."";
+              echo "<hr>
+
+              </tr>";
+
+
+                }
+                ?>
+                </table>
+                </form>
 
 
 
-						<?php
-            include "session.php";
-
-echo "<h1 style='text-align:center;'>Welcome</h1><h1 style='text-align:center;'>".	$_SESSION['name']."</h1><br>";
-echo "<hr>";
-echo "<div class='info' style='float:left;'><h2>Personal info:</h2>
-  <table style='text-align:left;padding:12px;margin: 15px; font-size:18px;'>
-  <tr>
-  <td class='title'>Name:</td>
-  <td>".$_SESSION['name']."</td>
-
-  </tr>
-  <tr>
-  <td class='title'>Age:</td>
-  <td>".$_SESSION['age']."</td>
-  </tr>
-  <tr>
-  <td class='title'>Email:</td>
-  <td>".$_SESSION['email']."</td>
-  </tr>
-  </table>
-
-  "
-?>
-
-
-
-              <form class="edit" type="get" action="editprofile.php">
-                <input type="submit"  class="btn btn-info" value="Edit Profile">
-
-              </form>
-
-              <?php echo "</div>"; ?>
-              <div class="uplr">
-              <p>
-                Upload your own Recipe here:</p>
-              <form class="edit" type="get" action="uploadpage.php">
-                <input type="submit" class="btn btn-success" value="Upload Recipe">
-
-              </form>
             </div>
 
-	  </div>
 
 
-
-    	 	 		<footer>
-
-
-    	 	 			<p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
-
-    	 	 </footer>
-      </body>
+                    <footer>
 
 
-</html>
+                      <p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
+
+                 </footer>
+              </body>
+
+
+        </html>

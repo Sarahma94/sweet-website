@@ -69,6 +69,8 @@ session_start();
 				  <li ><a href="index.html">Home</a></li>
 				  <li><a href="Recipes.html">Recipes</a></li>
 				  <li><a href="about.html">About Us</a></li>
+					<li><a href="contact.html" style="font-size: 17px;" >Contact Us</a></li>
+
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 				  <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -93,8 +95,8 @@ session_start();
 								$row= mysqli_fetch_assoc($result);
 										//echo "Login Successful";
 
-								$_SESSION['email']=$txtEmail;
-								$_SESSION['password']=$pwd;
+								$_SESSION['email']= $row['email'];
+								$_SESSION['password']=$row['password'];
 								$_SESSION['name']=$row['username'];
 								$_SESSION['age']=$row['age'];
 

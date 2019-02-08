@@ -11,6 +11,8 @@ session_start();
 	<title> Sweet Recipes  </title>
 	 <meta charset="UTF-8"/>
 	   <meta name="viewport" content="width=device-width, initial-scale=1">
+		 <link rel="stylesheet" type="text/css" href="css/style.css">
+
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -48,11 +50,23 @@ session_start();
 
 		.bg-down{
 		margin-bottom:0px;
+		height: 108%;
 			background-image: url("img/pink.jpg");
-			height: 15%;
 			background-position: center;
-		  background-repeat: no-repeat;
-		  background-size: cover;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+		}
+
+		footer{
+			text-align: center;
+			background-image: url("img/pink.jpg");
+			background-size: cover;
+			height: 5%;
+			margin-top: -23px;
+
+
+
 
 		}
 
@@ -159,6 +173,7 @@ session_start();
   }
   .topnav input[type=text] {
     border: 2px solid #ccc;
+
   }
 }
 .searche{
@@ -170,6 +185,10 @@ session_start();
 }
 .search_field{
 	border-radius: 10px;
+}
+
+li{
+	font-size: 17px;
 }
 	</style>
 
@@ -184,8 +203,18 @@ session_start();
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#" style="font-size: 17px;">Home</a></li>
-      <li><a href="Recipes.php" style="font-size: 17px;">Recipes</a></li>
+			<li class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" style="font-size: 17px;" href="Recipes.html">Recipes
+		<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="cupcake.html">Cupcake</a></li>
+			<li><a href="crepe.html">Crepe</a></li>
+			<li><a href="crossiant.html">Crossiant</a></li>
+		</ul>
+	</li>
       <li><a href="about.php" style="font-size: 17px;">About Us</a></li>
+			<li ><a href="#contact">Contact Us</a></li>
+
 	  <div class="topnav">
 
   <div class="search-container">
@@ -220,10 +249,75 @@ session_start();
 
 	</figure>
 
-	<div class="bg-down">
-	<p><h2 class="h2"> Contact us:</h2></p>
-	<p> Our Email: <a>SweetGroups@gmail.com</a></p>
-	<p> Our Telephone: 092 98376587</p>
+
+			<div class="bg-down">
+				<div id="contact">
+				<div class="container">
+					<div class="col-md-8">
+						<div class="row">
+							<div class="section-title">
+								<h2>Get In Touch</h2>
+								<p>Please fill out the form below to send us an email and we will get back to you as soon as possible.</p>
+							</div>
+							<form name="sentMessage" id="contactForm" action="contact_me.php" method="post" novalidate>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="text" id="name" class="form-control" placeholder="Name" required="required">
+											<p class="help-block text-danger"></p>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="email" id="email" class="form-control" placeholder="Email" required="required">
+											<p class="help-block text-danger"></p>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+									<p class="help-block text-danger"></p>
+								</div>
+								<div id="success"></div>
+								<button type="submit" class="btn btn-custom btn-lg">Send Message</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-3 col-md-offset-1 contact-info">
+						<div class="contact-item">
+							<h3>Contact Info</h3>
+							<p><span><i class="fa fa-map-marker"></i> Address</span>Libya,Tripoli<br>
+							UOT, IT college</p>
+						</div>
+						<div class="contact-item">
+							<p><span><i class="fa fa-phone"></i> Phone</span> +218 983 89 399</p>
+						</div>
+						<div class="contact-item">
+							<p><span><i class="fa fa-envelope-o"></i> Email</span> sweetrecipe@gmail.com</p>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="row">
+							<div class="social">
+								<ul>
+									<li><a href="www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="www.google.com"><i class="fa fa-google-plus"></i></a></li>
+									<li><a href="www.youtube.com"><i class="fa fa-youtube"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer>
+
+
+				<p>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></p>
+
+	</footer>
+
 
 
 	</div>

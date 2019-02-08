@@ -45,6 +45,7 @@ height:50%;
 }
 .slidey {vertical-align: middle;
 height: 500px;
+border-radius: 20px;
 
 
 }
@@ -124,7 +125,22 @@ height: 500px;
 	margin-left: 70px;
 	margin-bottom: 40px;
 
-		border: 1px solid #5E3F43;
+		border: 1px solid white;
+		border-radius: 20px;
+
+
+
+	}
+
+	footer
+	{
+		position: absolute;
+		bottom: -600px;
+		left: 30%;
+		height: 5%;
+		float: left;
+		font-size: 16px;
+
 
 
 
@@ -145,6 +161,8 @@ height: 500px;
 					<li ><a href="index.php" style="font-size: 17px;">Home</a></li>
 					<li class="active"><a href="Recipes.php" style="font-size: 17px;" >Recipes</a></li>
 					<li><a href="about.php" style="font-size: 17px;">About Us</a></li>
+					<li><a href="contact.php" style="font-size: 17px;" >Contact Us</a></li>
+
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="welcome.php" style="font-size: 17px;"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
@@ -206,6 +224,13 @@ height: 500px;
 
 
 								</figure>
+
+									 	 		<footer>
+
+
+									 	 			<p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
+
+									 	 </footer>
 
 
 

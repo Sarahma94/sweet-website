@@ -40,15 +40,28 @@ session_start();
 
 		}
 
-		p{color: white;
-		font-size: 30px;
-		float: left;
-		margin:15px;
-		padding: 20px;
+    #about {color: white;
+    font-size: 30px;
+    float: left;
+    margin:15px;
+    padding: 20px;
 
 
-		}
+    }
 
+    footer
+    {
+      position: absolute;
+      bottom: 0px;
+      left: 30%;
+      height: 5%;
+      float: left;
+      font-size: 16px;
+
+
+
+
+    }
 	 </style>
 
 
@@ -64,6 +77,8 @@ session_start();
           <li ><a href="index.php" style="font-size: 17px;">Home</a></li>
           <li><a href="Recipes.php" style="font-size: 17px;" >Recipes</a></li>
           <li class="active"><a href="about.php" style="font-size: 17px;">About Us</a></li>
+          <li><a href="contact.php" style="font-size: 17px;" >Contact Us</a></li>
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="welcome.php" style="font-size: 17px;"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
@@ -71,7 +86,7 @@ session_start();
 				</ul>
 			  </div>
 			</nav>
-			<p> We are two young programming students who are aiming<br> to become chefs and bring the best of our experiences as<br> both developers
+			<p id="about"> We are two young programming students who are aiming<br> to become chefs and bring the best of our experiences as<br> both developers
 			and chefs to all the world. </p>
 
 			<img src="img/cloud.png" width="200" height="200" style="float:right; margin:30px;"/>
@@ -79,7 +94,12 @@ session_start();
 			<img src="img/think.png" width="200" height="250" style="float:right; margin:-50px;"/>
 
 
+      <footer>
 
+
+        <p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
+
+   </footer>
 
 
 

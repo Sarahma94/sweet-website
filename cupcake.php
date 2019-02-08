@@ -135,6 +135,9 @@ session_start();
           <li ><a href="index.php" style="font-size: 17px;">Home</a></li>
           <li class="active"><a href="Recipes.php" style="font-size: 17px;" >Recipes</a></li>
           <li><a href="about.php" style="font-size: 17px;">About Us</a></li>
+
+          <li><a href="contact.php" style="font-size: 17px;" >Contact Us</a></li>
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="welcome.php" style="font-size: 17px;"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
