@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-	<head> 
+	<head>
 	<title> Recipes Page  </title>
 	 <meta charset="UTF-8"/>
 	 	   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,16 +10,16 @@
   integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-	 
-	 
+
+
+
 	 <style>
 			html,body{
 
-	
+
 	}
 		.bg{
-		
+
 		background-image: url("img/pink.jpg");
 
   /* Full height */
@@ -28,8 +28,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-		
-		
+
+
 		}
 		* {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
@@ -38,6 +38,7 @@ height:50%;
 }
 .slidey {vertical-align: middle;
 height: 500px;
+border-radius: 20px;
 
 
 }
@@ -93,12 +94,12 @@ height: 500px;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
@@ -110,24 +111,41 @@ height: 500px;
 .images{
 	margin:100px;
 	padding:20px;
-	
-	
+
+
 	}
 	.imge {
 	margin-left: 70px;
 	margin-bottom: 40px;
-	
-		border: 1px solid #5E3F43;
 
-	
-	
+		border: 1px solid white;
+		border-radius: 20px;
+
+
+
 	}
-	 
+	li{
+		font-size: 17px;
+	}
+	footer
+	{
+		position: absolute;
+		bottom: -600px;
+		left: 30%;
+		height: 5%;
+		float: left;
+		font-size: 16px;
+
+
+
+
+	}
+
 	 </style>
 
 
 	 </head>
-	 
+
 	 <body class="bg">
 			<nav class="navbar navbar-inverse">
 			  <div class="container-fluid">
@@ -138,6 +156,8 @@ height: 500px;
 				  <li ><a href="index.html">Home</a></li>
 				  <li class="active"><a href="#" >Recipes</a></li>
 				  <li><a href="about.html">About Us</a></li>
+					<li ><a href="contact.html">Contact Us</a></li>
+
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 				  <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -145,8 +165,8 @@ height: 500px;
 				</ul>
 			  </div>
 			</nav>
-			
-							
+
+
 						<div class="slideshow-container">
 
 									<div class="mySlides fade">
@@ -171,17 +191,17 @@ height: 500px;
 									<br>
 
 									<div style="text-align:center">
-									  <span class="dot"></span> 
-									  <span class="dot"></span> 
-									  <span class="dot"></span> 
+									  <span class="dot"></span>
+									  <span class="dot"></span>
+									  <span class="dot"></span>
 									</div>
-									
-									
-									
+
+
+
 								<div>
 								<p class="text"> Please Choose the recipe you like</p>
 								<figure class="images">
-								
+
 						<a href="crossiant.html">  <img class="imge" src="img/cross.jpg" alt="Crossiant" title="Crossiant" width="180" height="180"/></a>
 					 <a href="cupcake.html"> <img class="imge" src="img/cupcake.jpg" alt="CupCake" title="CupCake" width="180" height="180"/></a>
 					 <a href="crepe.html"><img class="imge" src="img/crepe.jpg" alt="Crepe" title="Crepe" width="180" height="180"/></a>
@@ -190,19 +210,27 @@ height: 500px;
 					<a href="swirl.html"><img class="imge" src="img/swirl.jpg" alt="Swirl cake" title="swirl cake" width="180" height="180"/></a>
 					<a href="mint.html"><img class="imge" src="img/pudding.jpg" alt="Chocolate Mint Pudding" title="Chocolate Mint Pudding" width="180" height="180"/></a>
 					<a href="muffin.html"><img class="imge" src="img/muffin.jpg" alt="Gingerbread Pear Muffins" title="Gingerbread Pear Muffins" width="180" height="180"/></a>
-								
+
 					<a href="choco.html"><img class="imge" src="img/cookies.jpg" alt="Chocolate chip cookies" title="Chocolate chip cookies" width="180" height="180"/></a>
 
 
 
 
-															
-								
+
+
 								</figure>
-								
-								
-								
-								
+
+
+									 	 		<footer>
+
+
+									 	 			<p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
+
+									 	 </footer>
+
+
+
+
 								</div>
 
 <script>
@@ -214,23 +242,23 @@ function showSlides() {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
   slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
+  if (slideIndex > slides.length) {slideIndex = 1}
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 2000); // Change image every 5 seconds
 }
 </script>
-	 
-	 
-	 
+
+
+
 	 </body>
-	 
+
 
 
 
