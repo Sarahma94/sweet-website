@@ -1,5 +1,6 @@
 <?php
 include "dbconfig.php";
+
 session_start();
 ?>
 <!doctype html>
@@ -177,54 +178,45 @@ height: -5%;   }
 			</nav>
 
 						<div class="form1">
-              <?php
-                if(isset($_POST['confirm'])){
-                  $pass= $_POST['password'];
-                  $em= $_SESSION['email'];
-                  $query = " SELECT * FROM `user` WHERE `email` = '".$em."'And `password` = '". $pass."' ";
-                  $con = mysqli_connect('localhost','root','','sweet website');
-
-                      $result = mysqli_query($con,$query);
-                      //$rowSelected   = mysqli_num_rows($result);
-
-                    if ( mysqli_num_rows($result)== 1 ) {
-                      $row= mysqli_fetch_assoc($result);
-                      echo "<script>location.replace('editprofile2.php');</script>";
-
-                    }
-
-                      else {
-
-                        echo "<script>alert('Invalid Password')</script>";
 
 
-                      }
+              <form class="form-horizontal" action="edit.php" method="post">
+    					<fieldset><legend>Update your Information</legend>
 
+    						 <div class="form-group">
+    							<label class="control-label col-sm-2" for="name">*Name:</label>
+    							<div class="col-sm-10">
+    								<input type="text" class="form-control" id="name" name="uname" onfocus="yellow(this)" onblur="white(this)" placeholder="Please Enter Your Name" required>
+    							</div>
+    					  </div>
+    					   <div class="form-group">
+    							<label class="control-label col-sm-2" for="age">Age:</label>
+    							<div class="col-sm-10">
+    								<input type="number" class="form-control" id="age" name="uage" onfocus="yellow(this)"   onblur="white(this)" placeholder="Please Enter Your Age">
+    							</div>
+    					  </div>
 
-                }
-
-
-               ?>
-
-
-
-              <form class="form-horizontal"  method="post" action="editprofile.php">
-    					<fieldset><legend>Enter your Password </legend>
-
-
-                <div class="form-group">
-               <label class="control-label col-sm-2" for="pwd">*Your Password:</label>
-               <div class="col-sm-10">
-                 <input type="password" class="form-control" id="pwd" name="password" onfocus="yellow(this)"  onblur="white(this)" placeholder="Please Enter Your Password" required>
-
+               <div class="form-group">
+                 <label class="control-label col-sm-2" for="pwd1">*New Password:</label>
+                 <div class="col-sm-10">
+         <input type="password" class="form-control" id="pwd1" name="newpass" onfocus="yellow(this)"  onblur="white(this)" placeholder="Please Re-enter Your Password" onkeyup='check();'  required>
+             <span id='message'></span>
+                 </div>
                </div>
+               <div class="form-group">
+                 <label class="control-label col-sm-2" for="pswcon">*Confirm new Password:</label>
+                 <div class="col-sm-10">
+         <input type="password" class="form-control" id="pswcon" name="confirmpass" onfocus="yellow(this)"  onblur="white(this)" placeholder="Please Re-enter Your Password" onkeyup='check();'  required>
+                 </div>
                </div>
+
+
 
 
 
     					  <div class="form-group">
     						<div class="col-sm-offset-2 col-sm-10">
-                  <input type="submit"  id="confirm" name="confirm" value="Confirm"class="btn btn-default">
+    						  <button type="submit" name="update" class="btn btn-default">Update</button>
     						</div>
     					  </div>
     					  <div class="form-group">
@@ -237,7 +229,6 @@ height: -5%;   }
     						  </fieldset>
 
     					</form>
-
 
 
 

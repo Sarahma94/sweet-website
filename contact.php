@@ -188,8 +188,8 @@ color: #777;
 
      </ul>
      <ul class="nav navbar-nav navbar-right">
-       <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-       <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+       <li><a href="welcomw.php"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+       <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
      </ul>
      </div>
    </nav>

@@ -25,6 +25,10 @@ session_start();
 	<script src="/js/jquery.min.js"></script>
 
 	<style>
+	@font-face {
+	font-family: myFirstFont;
+	src: url("tagetts.ttf");
+}
 	html,body{
 		  height: 100%;
 		 font-family: Verdana, sans-serif;
@@ -97,8 +101,12 @@ session_start();
 	color:#5E3F43;
 
 	}
-	.h2{
+	h1{
 		margin:10px;
+		line-height: 1.5em;
+		font-weight: bold;
+		color: Deeppink;
+		font-family: myFirstFont;
 
 
 	}
@@ -190,7 +198,47 @@ session_start();
 li{
 	font-size: 17px;
 }
+.welcome{
+	position: relative;
+	left: 500px;
+	top:12px;
+	text-align: center;
+	color: Deeppink;
+	font-family: myFirstFont;
+	line-height: 1.5em;
+	font-weight: bold;
+	}
 	</style>
+	<script>
+	$(function() {
+$(".imge-head")
+.animate({ "height" : 300 })
+.fadeOut()
+.show(2000)
+.animate({ "width" : 290 });
+$(".welcome").hide(1500).show(500).animate({"width": 290});
+$(".imge").on("mouseenter", function() {
+	$(".imge").animate({ "height" : 350, "width": 350 });
+
+}).on("mouseleave", function(){
+
+	$(".imge").animate({ "height" : 290, "width": 290 });
+
+});
+$(".imge-head").on("mouseenter", function() {
+	$(".imge-head").animate({ "height" : 400, "width": 400 });
+
+}).on("mouseleave", function(){
+
+	$(".imge-head").animate({ "height" : 290, "width": 290 });
+
+});
+
+});
+</script>
+
+
+
 
 
 	 </head>
@@ -207,9 +255,9 @@ li{
 		<a class="dropdown-toggle" data-toggle="dropdown" style="font-size: 17px;" href="Recipes.html">Recipes
 		<span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a href="cupcake.html">Cupcake</a></li>
-			<li><a href="crepe.html">Crepe</a></li>
-			<li><a href="crossiant.html">Crossiant</a></li>
+			<li><a href="cupcake.php">Cupcake</a></li>
+			<li><a href="crepe.php">Crepe</a></li>
+			<li><a href="crossiant.php">Crossiant</a></li>
 		</ul>
 	</li>
       <li><a href="about.php" style="font-size: 17px;">About Us</a></li>
@@ -233,6 +281,8 @@ li{
 
 <div class="bg">
 		  <img class="imge-head" src="img/logo.jpg" alt="Chef" width="290" height="290"/>
+			<h1 class="welcome"> Welcome To Our Website</h1>
+
 
 
 </div>
@@ -242,7 +292,7 @@ li{
 	 <a href="cupcake.php"> <img class="imge" src="img/cupcake.jpg" alt="CupCake" title="CupCake" width="290" height="290"/></a>
 	  <a href="crepe.php"><img class="imge" src="img/crepe.jpg" alt="Crepe" title="Crepe" width="290" height="290"/></a>
 	  <figcaption class="figcapt">
-			<h2>Our Most Enjoyable Recipes</h2>
+			<h1>Our Most Enjoyable Recipes</h1>
 	  </figcaption>
 
 

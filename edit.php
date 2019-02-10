@@ -141,18 +141,18 @@ include "dbconfig.php";
   try{
     $name = $_POST['uname'];
     $age=$_POST['uage'];
-    $email = $_POST['uemail'];
-    $password = $_POST['password'];
+    $email = $_SESSION['email'];
+    $newpass= $_POST['newpass'];
     $conpass= $_POST['confirmpass'];
 
-    $query = "UPDATE `user` SET username= '$name' , age ='$age',password= '$password',confirm= '$conpass' WHERE email= '$email' ";
+    $query = "UPDATE `user` SET username= '$name' , age ='$age',password= '$newpass',confirm= '$conpass' WHERE `email`= '".$email."' ";
     $stmt = $DB_con->prepare($query);
 
     if($stmt->execute()){
         echo "<div class='alert alert-success'>
   <strong>Success!</strong> User Updated Successfully
 </div>";
-$query = " SELECT * FROM `user` WHERE `email` = '".$email."'And `password` = '". $password."' ";
+$query = " SELECT * FROM `user` WHERE `email` = '".$email."'And `password` = '". $newpass."' ";
 $con = mysqli_connect('localhost','root','','sweet website');
 
     $result = mysqli_query($con,$query);

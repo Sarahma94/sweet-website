@@ -10,6 +10,7 @@
   integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="jquery-3.3.1.min.js"></script>
 
 		<style>
 
@@ -41,6 +42,7 @@
 		padding: 30px;
 		margin-bottom:20px;
 		background-color: #ffffff;
+    overflow: scroll;
 
 		}
     footer
@@ -77,8 +79,8 @@ object
 {
   border-radius: 10px;
 color: black;
-width: 620px;
-height:300px;
+width: 820px;
+height:450px;
 
 
 }
@@ -151,6 +153,7 @@ height:300px;
                 }
                 ?>
                 </table>
+                <a href="#top "id="panel">Top</a>
                 </form>
 
 
@@ -165,6 +168,29 @@ height:300px;
                       <p><small>Copyright &copy; 2018 <a href="index.html">Sweets Website</a> All rights reserved | Website By <a target="_blank" href="sarahalm462@gmail.com">Sarah Alm</a></small></p>
 
                  </footer>
+
+                 <script>
+  $(document).ready(function(){
+       $('#upload').click(function(){
+            var file_name = $('#userfile').val();
+            if(file_name == '')
+            {
+                 alert("Please Select File");
+                 return false;
+            }
+            else
+            {
+                 var extension = $('#userfile').val().split('.').pop().toLowerCase();
+                 if(jQuery.inArray(extension, ['pdf']) == -1)
+                 {
+                      alert('Invalid Document File, Please enter a PDF file Type');
+                      $('#userfile').val('');
+                      return false;
+                 }
+            }
+       });
+  });
+  </script>
               </body>
 
 
